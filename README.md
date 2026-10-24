@@ -29,13 +29,25 @@
 - Git;
 - GitHub.
 
+## Практическая работа 10
+
+Тема: «Страница на Bootstrap: компоненты».
+
+Выполнено:
+
+- добавлена единая Bootstrap-навигация с выпадающим меню;
+- создана страница каталога `catalog.html`;
+- создана страница товара `product.html`;
+- создана страница заявки `order.html`;
+- использованы компоненты `navbar`, `card`, `btn`, `badge`, `alert`, `modal`, `form-control`, `form-select`, `input-group`, `form-check`, `breadcrumb`, `table`, `accordion`;
+- добавлен файл `css/custom.css` для минимальных доработок.
+
 ## Структура проекта
 
-```text
-kr2-bootstrap-shop/
-├── index.html
-├── css/
-│   └── custom.css
-├── README.md
-└── .gitignore
-```
+- `index.html` — главная страница;
+- `catalog.html` — каталог товаров;
+- `product.html` — страница товара;
+- `order.html` — форма заявки;
+- `css/custom.css` — дополнительные стили проекта;
+- `images/` — изображения проекта;
+- `README.md` — описание проекта.
