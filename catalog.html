@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Каталог — Bootstrap Shop</title>
 
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
+  <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/custom.css">
 </head>
 <body class="bg-light">
@@ -42,6 +39,9 @@
         <li class="nav-item">
           <a class="nav-link" href="order.html">Заявка</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contacts.html">Контакты</a>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -73,8 +73,15 @@
       <a class="btn btn-outline-primary" href="order.html">Оставить заявку</a>
     </div>
 
+    <div class="btn-group flex-wrap mb-4" role="group" aria-label="Фильтр по категориям">
+      <button type="button" class="btn btn-outline-secondary active" data-filter="all">Все</button>
+      <button type="button" class="btn btn-outline-secondary" data-filter="audio">Аудио</button>
+      <button type="button" class="btn btn-outline-secondary" data-filter="gadgets">Гаджеты</button>
+      <button type="button" class="btn btn-outline-secondary" data-filter="pc">Для ПК</button>
+    </div>
+
     <div class="row g-4">
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="audio">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Беспроводные наушники</span>
@@ -103,7 +110,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="gadgets">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Умные часы</span>
@@ -132,7 +139,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="audio">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Портативная колонка</span>
@@ -161,7 +168,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="pc">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Механическая клавиатура</span>
@@ -190,7 +197,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="pc">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Игровая мышь</span>
@@ -219,7 +226,7 @@
             </div>
           </div>
         </div>
-        <div class="col-12 col-md-6 col-lg-4 product-item">
+        <div class="col-12 col-md-6 col-lg-4 product-item" data-category="gadgets">
           <div class="card h-100 shadow-sm product-card">
             <div class="card-img-placeholder bg-secondary-subtle d-flex align-items-center justify-content-center">
               <span class="text-muted">Фото: Внешний аккумулятор</span>
@@ -249,6 +256,16 @@
           </div>
         </div>
     </div>
+
+    <nav class="mt-5" aria-label="Страницы каталога">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><span class="page-link">Назад</span></li>
+        <li class="page-item active" aria-current="page"><span class="page-link">1</span></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Вперёд</a></li>
+      </ul>
+    </nav>
   </main>
 
   <footer class="bg-dark text-white py-4 mt-5">
@@ -261,6 +278,7 @@
         <div class="col-12 col-md-6 text-md-end">
           <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
           <a class="text-white text-decoration-none me-3" href="order.html">Заявка</a>
+          <a class="text-white text-decoration-none me-3" href="contacts.html">Контакты</a>
         </div>
       </div>
     </div>
@@ -311,8 +329,7 @@
     </div>
   </div>
 
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-  </script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
