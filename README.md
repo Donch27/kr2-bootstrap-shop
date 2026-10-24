@@ -1,53 +1,96 @@
-# Контрольная работа №2
+# Bootstrap Shop — Контрольная работа №2
 
 Тема: «CSS-фреймворки: разработка интерфейса на Bootstrap или альтернативном CSS-фреймворке».
 
+**Студент:** Дончу Артём Юлианович
+**Группа:** ЭФБО-03-25
+
+**Опубликованная версия (GitHub Pages):** [ССЫЛКА_НА_GITHUB_PAGES](https://donch27.github.io/kr2-bootstrap-shop/)
+
 ## Описание
 
-Проект представляет собой учебную версию сайта интернет-магазина электроники, разработанную с использованием Bootstrap.
+Учебный интернет-магазин электроники, сделанный на Bootstrap 5. Отдельная реализация предметной области КР №1 через CSS-фреймворк.
 
-## Практическая работа 9
+## Используемый фреймворк
 
-Выполнена главная страница на Bootstrap-сетке.
+Bootstrap 5.3.8.
 
-Реализовано:
+## Способ подключения
 
-- подключение Bootstrap через CDN;
-- подключение `css/custom.css`;
-- шапка страницы;
-- Bootstrap-навигация;
-- hero-блок на сетке;
-- блок преимуществ (фон на `container-fluid`, контент в `container`);
-- сетка популярных товаров;
-- подвал страницы.
+Bootstrap подключён **локально, без CDN**. Файлы фреймворка (compiled-версия с getbootstrap.com) размещены в папке `vendor/bootstrap/`.
 
-## Используемые технологии
+Используются:
 
-- HTML;
-- Bootstrap;
-- CSS;
-- Git;
-- GitHub.
+- `vendor/bootstrap/css/bootstrap.min.css` — в `<head>`, до `css/custom.css`;
+- `vendor/bootstrap/js/bootstrap.bundle.min.js` — перед `</body>` (нужен для navbar, dropdown, modal, accordion, carousel, tabs, toast).
 
-## Практическая работа 10
+`css/custom.css` подключается после Bootstrap, чтобы переопределять отдельные стили.
 
-Тема: «Страница на Bootstrap: компоненты».
+## Страницы
 
-Выполнено:
+| Страница | Содержание |
+| --- | --- |
+| `index.html` | шапка, navbar, hero-блок с каруселью, преимущества, популярные товары |
+| `catalog.html` | каталог из 6 карточек, фильтр по категориям, пагинация, модальное окно заказа |
+| `product.html` | хлебные крошки, описание товара, вкладки (tabs), таблица характеристик, accordion |
+| `order.html` | форма заявки с валидацией Bootstrap и уведомлением toast |
+| `contacts.html` | контакты и режим работы (дополнительная страница) |
 
-- добавлена единая Bootstrap-навигация с выпадающим меню;
-- создана страница каталога `catalog.html`;
-- создана страница товара `product.html`;
-- создана страница заявки `order.html`;
-- использованы компоненты `navbar`, `card`, `btn`, `badge`, `alert`, `modal`, `form-control`, `form-select`, `input-group`, `form-check`, `breadcrumb`, `table`, `accordion`;
-- добавлен файл `css/custom.css` для минимальных доработок.
+## Реализованные компоненты
+
+- Сетка: `container`, `container-fluid`, `row`, `col-12`, `col-md-*`, `col-lg-*`, `g-*`;
+- `navbar` (с `dropdown` и мобильным меню);
+- `card`;
+- `btn`, `btn-group`;
+- `badge`;
+- `alert`;
+- `modal`;
+- `form-control`, `form-select`, `input-group`, `form-check` (чекбоксы и радиокнопки);
+- `breadcrumb`, `table`, `list-group`;
+- `accordion`, `carousel`, `tabs`, `toast`, `pagination`.
+
+## Самостоятельные доработки
+
+- Bootstrap подключён локально из `vendor/bootstrap/` вместо CDN;
+- добавлена страница `contacts.html`;
+- каталог расширен до 6 товаров в 3 категориях;
+- фильтр каталога по категориям (`btn-group` + небольшой скрипт `js/main.js`);
+- пагинация каталога (`pagination`);
+- карусель промо-акций на главной (`carousel`);
+- вкладки «Описание / Доставка / Отзывы» на странице товара (`tabs`);
+- форма заявки: выбор способа получения (радиокнопки), валидация Bootstrap (`needs-validation`, `invalid-feedback`), уведомление `toast` после отправки;
+- модальное окно по центру экрана (`modal-dialog-centered`);
+- эффект наведения на карточки товаров в `custom.css`;
+- навигация закреплена сверху (`sticky-top`).
+
+## Как проверить
+
+1. Открыть `index.html` — проверить навигацию, карусель и карточки.
+2. Открыть `catalog.html` — нажать кнопки фильтра, нажать «Заказать» (откроется модальное окно).
+3. Открыть `product.html` — переключить вкладки, раскрыть вопросы accordion.
+4. Открыть `order.html` — нажать «Отправить заявку» с пустыми полями (появятся ошибки), затем заполнить и отправить (появится уведомление).
+5. В DevTools проверить ширины 375, 768, 1024 и 1440 px.
 
 ## Структура проекта
 
-- `index.html` — главная страница;
-- `catalog.html` — каталог товаров;
-- `product.html` — страница товара;
-- `order.html` — форма заявки;
-- `css/custom.css` — дополнительные стили проекта;
-- `images/` — изображения проекта;
-- `README.md` — описание проекта.
+```text
+kr2-bootstrap-shop/
+├── index.html
+├── catalog.html
+├── product.html
+├── order.html
+├── contacts.html
+├── css/
+│   └── custom.css
+├── js/
+│   └── main.js
+├── vendor/
+│   └── bootstrap/
+│       ├── css/
+│       │   └── bootstrap.min.css
+│       └── js/
+│           └── bootstrap.bundle.min.js
+├── images/
+├── README.md
+└── .gitignore
+```
