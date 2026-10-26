@@ -23,6 +23,10 @@ body {
   min-height: 280px;
 }
 
+.header-ice {
+  background: linear-gradient(135deg, #0b2545 0%, #13315c 55%, #1b6ca8 100%) !important;
+}
+
 .product-card {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
