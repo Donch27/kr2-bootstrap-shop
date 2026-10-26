@@ -19,6 +19,25 @@ body {
   height: 160px;
 }
 
+/* Футер всегда прижат к низу экрана */
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.product-photo {
+  height: 400px;
+  object-fit: cover;
+}
+
 .promo-slide {
   min-height: 280px;
 }
